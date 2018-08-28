@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="home_card_view_size">300dp</dimen>
+    <dimen name="home_card_view_size1">360dp</dimen>
+    <dimen name="home_linear_layout">52dp</dimen>
+    <dimen name="home_card_view_size2">180dp</dimen>
+    <dimen name="home_linear_layout1">37dp</dimen>
+    <dimen name="menu_text_size">24sp</dimen>
+    <dimen name="menut_text_size1">18sp</dimen>
+</resources>

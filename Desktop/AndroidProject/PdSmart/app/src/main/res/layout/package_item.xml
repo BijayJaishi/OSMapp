@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        app:cardUseCompatPadding="true"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:scaleType="centerCrop"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/ic_camera_alt_black_24dp"
+                    android:id="@+id/pkg_img"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    />
+                <ProgressBar
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:indeterminateTint="@color/view_line"
+                    android:id="@+id/progress_bar"
+                    />
+            </RelativeLayout>
+
+
+
+            <LinearLayout
+                android:paddingLeft="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textSize="16sp"
+                    android:fontFamily="@font/roboto"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pkg_name"
+                    android:text="product Name"/>
+
+                <TextView
+                    android:text="dfsafdasfasdfsdfas dsafd asdfas asdfa sadfa dsafdas sadfas sdaf dsafasd asdfas fasd"
+                    android:paddingTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:id="@+id/pkg_desc"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                   />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:padding="5dp"
+                        android:id="@+id/pkg_price"
+                        android:textSize="16sp"
+                        android:gravity="center"
+                        android:textColor="@android:color/white"
+                        android:text="Rs. 2000"
+                        android:drawablePadding="5dp"
+                        android:drawableLeft="@drawable/tag_32"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:background="@drawable/btn_background"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_alignParentRight="true" />
+                </RelativeLayout>
+
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

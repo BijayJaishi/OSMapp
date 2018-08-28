@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PdSmart Education</string>
+    <string name="drawer_opened">Opened</string>
+    <string name="drawer_closed">Closed</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="signIn">Already have an account ?<u> Sign In</u></string>
+</resources>

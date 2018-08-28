@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.creatu_developer.pdsmart">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:configChanges="screenSize|orientation|screenLayout"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme"
+            android:configChanges="screenSize|orientation|screenLayout">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".academic.plus_two.PlusTwoScienceActivity"
+            android:theme="@style/AppTheme"
+            android:configChanges="screenSize|orientation|screenLayout"/>
+        <activity
+            android:name=".academic.plus_two.PlusTwoCommerceActivity"
+            android:theme="@style/AppTheme"
+            android:configChanges="screenSize|orientation|screenLayout"/>
+        <activity
+            android:name=".academic.bachelor.BachelorActivity"
+            android:theme="@style/AppTheme"
+            android:configChanges="screenSize|orientation|screenLayout"/>
+        <activity
+            android:name=".academic.masters.MasterActivity"
+            android:theme="@style/AppTheme"
+            android:configChanges="screenSize|orientation|screenLayout"/>
+        <activity android:name=".DetailActivity"
+            android:configChanges="screenSize|orientation|screenLayout"/>
+        <activity android:name=".innerpage.InnerActivity"
+            android:configChanges="screenSize|orientation|screenLayout"/>
+        <activity android:name=".authentications.LoginActivity"
+            android:configChanges="screenSize|orientation|screenLayout"/>
+        <activity android:name=".authentications.RegisterActivity"
+            android:configChanges="screenSize|orientation|screenLayout"/>
+        <activity android:name=".innerpage.VideoActivity"
+            android:configChanges="screenSize|orientation|screenLayout"></activity>
+    </application>
+
+</manifest>

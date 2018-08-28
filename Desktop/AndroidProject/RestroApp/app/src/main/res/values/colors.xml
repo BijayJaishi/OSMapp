@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#69c730</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#dedede</color>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="green">#69c730</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="view_line">#dedede</color>
+    <color name="facebook_btn_color">#4267b2</color>
+    <color name="gmail_btn_color">#da3738</color>
+    <color name="image_background">#716C6B</color>
+</resources>
