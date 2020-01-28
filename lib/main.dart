@@ -83,29 +83,6 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
                 FadeAnimation(5.0, FormCard()),
-                SizedBox(height: ScreenUtil.getInstance().setHeight(40)),
-                SizedBox(
-                  height: ScreenUtil.getInstance().setHeight(40),
-                ),
-                FadeAnimation(
-                  6.0,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        "New User? ",
-                        style: TextStyle(fontFamily: "Poppins-Medium"),
-                      ),
-                      InkWell(
-                        onTap: () {},
-                        child: Text("SignUp",
-                            style: TextStyle(
-                                color: Color(0xFF5d74e3),
-                                fontFamily: "Poppins-Bold")),
-                      )
-                    ],
-                  ),
-                )
               ],
             ),
           ),

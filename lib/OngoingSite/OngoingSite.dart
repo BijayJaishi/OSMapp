@@ -1,10 +1,6 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:osm_app/Dashboard/DashBoardContent.dart';
+
 import 'package:osm_app/OngoingSite/OngoingSiteContent.dart';
 
 class OngoingSite extends StatefulWidget {
@@ -13,73 +9,87 @@ class OngoingSite extends StatefulWidget {
 }
 
 class OngoingSiteState extends State<OngoingSite> {
-  final double circleRadius = 100.0;
-  final double circleBorderWidth = 4.8;
   DateTime currentBackPressTime;
-
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.instance = ScreenUtil.getInstance()
-      ..init(context);
+    ScreenUtil.instance = ScreenUtil.getInstance()..init(context);
     ScreenUtil.instance =
         ScreenUtil(width: 750, height: 1334, allowFontScaling: true);
     return new Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.deepOrangeAccent,
-        bottomOpacity: 0.0,
-        elevation: 0.0,
-        centerTitle: true,
-        iconTheme: IconThemeData(
-          color: Colors.black,
-          //change your color here
-        ),
-        title: Text("Ongoing Sites",style:TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold,fontFamily: "Poppins-bold")),
-      ),
       backgroundColor: Colors.white,
       resizeToAvoidBottomPadding: true,
-      body: mainContent(),
+      body: NestedScrollView(
+        headerSliverBuilder: (context, value) {
+          return [
+            SliverAppBar(
+              backgroundColor: Colors.deepOrangeAccent,
+              elevation: 0.0,
+              centerTitle: true,
+              iconTheme: IconThemeData(
+                color: Colors.black,
+                //change your color here
+              ),
+              expandedHeight: 200.0,
+              floating: false,
+              pinned: true,
+              flexibleSpace: new FlexibleSpaceBar(centerTitle: true,
+                background: Center(
+                  child: Container(
+                    height: 800,
+                    width: 350,
+                    margin: EdgeInsets.only(bottom: 9),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage('assets/images/logofinalosm.png'),
+                      ),
+                    ),
+                  ),
+                ),
+                title: new Text("Ongoing Sites",
+                    style: TextStyle(
+                        color: Colors.black,
+//                        fontWeight: FontWeight.bold,
+//                        fontFamily: "Poppins-Bold"
+                    )),
+              ),
+            ),
+          ];
+        },
+        body: mainContent(),
+      ),
     );
   }
 
-  Widget mainContent(){
+  Widget mainContent() {
     return Stack(
       fit: StackFit.expand,
       children: <Widget>[
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(bottom: 2.0),
-              child: ClipPath(
-                clipper: ClippingClass(),
-                child: Container(
-                  width: MediaQuery
-                      .of(context)
-                      .size
-                      .width,
-                  height: 305.0,
-                  color: Colors.deepOrangeAccent,
-                ),
+        Positioned(
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 300,
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 2.0),
+            child: ClipPath(
+              clipper: ClippingClass(),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                color: Colors.deepOrangeAccent,
               ),
             ),
-          ],
+          ),
         ),
-        Column(
-          children: <Widget>[
-            Container(
-              width: 700.0,
-              height: 150.0,
-              alignment: Alignment.center,
-              decoration: new BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/images/logofinalosm.png"),
-                    fit: BoxFit.cover),
-              ),
-            ),
 
-            ongoingsitecontent(),
-          ],
+        Positioned(
+          bottom: 0,
+          left: 0,
+          right: 0,
+          top: 0,
+          child: ongoingsitecontent(),
         )
       ],
     );

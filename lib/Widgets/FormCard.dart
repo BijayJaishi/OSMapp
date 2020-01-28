@@ -141,11 +141,10 @@ class _FormCardState extends State<FormCard> {
                         Colors.deepOrangeAccent,
                       ]),
                       borderRadius: BorderRadius.circular(6.0),
-                      border: Border.all(color: Colors.black,width: 1.5),
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.red.withOpacity(.3),
-                            offset: Offset(0.0, 8.0),
+                            color: Colors.black12.withOpacity(.3),
+                            offset: Offset(5.0, 8.0),
                             blurRadius: 8.0)
                       ]),
                   child: Material(
