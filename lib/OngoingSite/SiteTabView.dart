@@ -6,6 +6,11 @@ import 'BillImages.dart';
 import 'BillImagesContent.dart';
 
 class SiteTabView extends StatefulWidget {
+
+  final String title;
+
+  SiteTabView(this.title);
+
   @override
   _SiteTabViewState createState() => _SiteTabViewState();
 }
@@ -30,7 +35,7 @@ class _SiteTabViewState extends State<SiteTabView > with SingleTickerProviderSta
           //change your color here
         ),
         backgroundColor: Colors.deepOrangeAccent,
-        title: Text("Site One", style: TextStyle(color: Colors.black),),
+        title: Text("${widget.title}", style: TextStyle(color: Colors.black),),
         bottom: TabBar(
           unselectedLabelColor: Colors.white,
           labelColor: Colors.yellowAccent, tabs: [

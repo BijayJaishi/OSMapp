@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
-import 'package:osm_app/Custom_dialog/customdialog.dart' as customDialog;
 
 class SiteImageContent extends StatefulWidget {
   @override
@@ -117,7 +116,8 @@ class SiteImageContentState extends State<SiteImageContent> {
     showDialog(
       context: context,
       builder: (context) {
-        return customDialog.Dialog(
+        return Dialog(
+          backgroundColor: Colors.transparent,
           child: Container(
             height:270,
             width: 500,

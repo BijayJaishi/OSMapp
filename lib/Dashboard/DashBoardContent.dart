@@ -6,7 +6,7 @@ import 'package:osm_app/SiteExpenditure/SiteExpenditure.dart';
 import 'package:osm_app/TotalAttendance/TotalAttendance.dart';
 import 'package:osm_app/TotalSalary/TotalSalary.dart';
 import 'package:osm_app/TransportationCost/TransportationCost.dart';
-import 'package:osm_app/main.dart';
+import '../login.dart';
 
 class DashBoardContent extends StatelessWidget {
   final double circleRadius = 100.0;
@@ -16,12 +16,7 @@ class DashBoardContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-//        Positioned(
-////          top: 0,
-//            left: 0,
-//            right: 0,
-//            bottom: 0,
-//            child: getCard(context)),
+
         getCard(context),
         getimage(),
       ],

@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
-import 'package:osm_app/Custom_dialog/customdialog.dart' as customDialog;
 
 class BillContent extends StatefulWidget {
   @override
@@ -116,7 +115,7 @@ class _BillContentState extends State<BillContent> {
     showDialog(
       context: context,
       builder: (context) {
-        return customDialog.Dialog(
+        return Dialog(
             child: PhotoView(
                   imageProvider: AssetImage(imgUrl),
                   backgroundDecoration: BoxDecoration(color: Colors.transparent),
