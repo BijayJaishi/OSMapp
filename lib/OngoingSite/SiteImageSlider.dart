@@ -117,26 +117,43 @@ class SiteImageContentState extends State<SiteImageContent> {
     showDialog(
       context: context,
       builder: (context) {
-        return customDialog.Dialog(
-          child: Container(
-            height:270,
-            width: 500,
-
-            child: Card(
-              //semanticContainer: true,
-//              clipBehavior: Clip.antiAliasWithSaveLayer,
+        return GestureDetector(
+          onTap: (){
+            Navigator.of(context).pop();
+          },
+          child: Opacity(
+            opacity: 1.0,
+            child: customDialog.Dialog(
+              backgroundColor: Colors.transparent,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: PhotoView(
                   imageProvider: AssetImage(imgUrl),
-                  backgroundDecoration: BoxDecoration(color: Colors.transparent),
+                 backgroundDecoration: BoxDecoration(color: Colors.transparent),
                 ),
               ),
-//              shape: RoundedRectangleBorder(
-//                borderRadius: BorderRadius.circular(10.0),
-//              ),
-              elevation: 12,
-              margin: EdgeInsets.only(left:0),
+//          child: Container(
+//            height:270,
+//            width: 500,
+//            child: PhotoView(
+//              imageProvider: AssetImage(imgUrl),
+//              backgroundDecoration: BoxDecoration(color: Colors.transparent),
+//            ),
+//
+////            child: Card(
+////              //semanticContainer: true,
+//////              clipBehavior: Clip.antiAliasWithSaveLayer,
+////              child: PhotoView(
+////                imageProvider: AssetImage(imgUrl),
+////                backgroundDecoration: BoxDecoration(color: Colors.transparent),
+////              ),
+//////              shape: RoundedRectangleBorder(
+//////                borderRadius: BorderRadius.circular(10.0),
+//////              ),
+////              elevation: 12,
+////              margin: EdgeInsets.only(left:0),
+////            ),
+//          ),
             ),
           ),
         );

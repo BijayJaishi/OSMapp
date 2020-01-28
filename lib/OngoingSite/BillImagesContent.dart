@@ -116,10 +116,20 @@ class _BillContentState extends State<BillContent> {
     showDialog(
       context: context,
       builder: (context) {
-        return customDialog.Dialog(
-            child: PhotoView(
-                  imageProvider: AssetImage(imgUrl),
-                  backgroundDecoration: BoxDecoration(color: Colors.transparent),
+        return GestureDetector(
+          onTap: (){
+            Navigator.of(context).pop();
+          },
+          child: Opacity(
+            opacity: 1,
+            child: customDialog.Dialog(
+              backgroundColor: Colors.transparent,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: PhotoView(
+                        imageProvider: AssetImage(imgUrl),
+                        backgroundDecoration: BoxDecoration(color: Colors.transparent),
+                      ),
                 ),
 //          child: Container(
 //            height:270,
@@ -142,6 +152,8 @@ class _BillContentState extends State<BillContent> {
 //              margin: EdgeInsets.only(left:0),
 //            ),
 //          ),
+            ),
+          ),
         );
       },
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:osm_app/OngoingSite/SiteImageSlider.dart';
 import 'package:osm_app/OngoingSite/SiteImages.dart';
+import 'package:osm_app/OngoingSite/stockRemaining.dart';
 
 import 'BillImages.dart';
 import 'BillImagesContent.dart';
@@ -47,7 +48,7 @@ class _SiteTabViewState extends State<SiteTabView > with SingleTickerProviderSta
             child:Text("Bill Images")
         ),
         new Tab(
-            child:Text("Stock Left")
+            child:Text("Stock")
         )
 
          ],
@@ -60,7 +61,7 @@ class _SiteTabViewState extends State<SiteTabView > with SingleTickerProviderSta
         children: [
           getSiteImages(),
           getBillImages(),
-          new Text("This is chat Tab View"),
+          getStock(),
 
         ],
         controller: _tabController,),
@@ -77,5 +78,10 @@ class _SiteTabViewState extends State<SiteTabView > with SingleTickerProviderSta
   Widget getBillImages(){
 
     return BillImages();
+  }
+
+  Widget getStock(){
+
+    return stockRemaining();
   }
 }
