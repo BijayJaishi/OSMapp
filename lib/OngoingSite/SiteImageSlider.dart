@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
+import 'package:osm_app/Custom_dialog/customDialog.dart'as customDialog;
+
 
 class SiteImageContent extends StatefulWidget {
   @override
@@ -116,27 +118,18 @@ class SiteImageContentState extends State<SiteImageContent> {
     showDialog(
       context: context,
       builder: (context) {
-        return Dialog(
-          backgroundColor: Colors.transparent,
-          child: Container(
-            height:270,
-            width: 500,
-
-            child: Card(
-              //semanticContainer: true,
-//              clipBehavior: Clip.antiAliasWithSaveLayer,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: PhotoView(
-                  imageProvider: AssetImage(imgUrl),
-                  backgroundDecoration: BoxDecoration(color: Colors.transparent),
-                ),
+        return GestureDetector(
+          onTap: (){
+            Navigator.of(context).pop();
+          },
+          child: customDialog.Dialog(
+            backgroundColor: Colors.transparent,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: PhotoView(
+                imageProvider: AssetImage(imgUrl),
+                backgroundDecoration: BoxDecoration(color: Colors.transparent),
               ),
-//              shape: RoundedRectangleBorder(
-//                borderRadius: BorderRadius.circular(10.0),
-//              ),
-              elevation: 12,
-              margin: EdgeInsets.only(left:0),
             ),
           ),
         );

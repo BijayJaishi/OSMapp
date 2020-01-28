@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
+import 'package:osm_app/Custom_dialog/customDialog.dart'as customDialog;
 
 class BillContent extends StatefulWidget {
   @override
@@ -115,11 +116,19 @@ class _BillContentState extends State<BillContent> {
     showDialog(
       context: context,
       builder: (context) {
-        return Dialog(
-            child: PhotoView(
-                  imageProvider: AssetImage(imgUrl),
-                  backgroundDecoration: BoxDecoration(color: Colors.transparent),
-                ),
+        return GestureDetector(
+          onTap: (){
+            Navigator.of(context).pop();
+          },
+          child: customDialog.Dialog(
+            backgroundColor: Colors.transparent,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: PhotoView(
+                      imageProvider: AssetImage(imgUrl),
+                      backgroundDecoration: BoxDecoration(color: Colors.transparent),
+                    ),
+              ),
 //          child: Container(
 //            height:270,
 //            width: 500,
@@ -141,6 +150,7 @@ class _BillContentState extends State<BillContent> {
 //              margin: EdgeInsets.only(left:0),
 //            ),
 //          ),
+          ),
         );
       },
     );

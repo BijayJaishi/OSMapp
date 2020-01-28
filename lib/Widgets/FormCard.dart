@@ -45,7 +45,7 @@ class _FormCardState extends State<FormCard> {
     return new Container(
 
       width: double.infinity,
-      height: ScreenUtil.getInstance().setHeight(700),
+      height: ScreenUtil.getInstance().setHeight(780),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(8.0),
