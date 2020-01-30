@@ -53,7 +53,7 @@ class _SiteTabViewState extends State<SiteTabView > with SingleTickerProviderSta
             child:Text("Bill Images")
         ),
         new Tab(
-            child:Text("Stock Left")
+            child:Text("Stock")
         )
 
          ],

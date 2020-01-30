@@ -5,6 +5,10 @@ import 'package:osm_app/Custom_dialog/customDialog.dart'as customDialog;
 
 
 class SiteImageContent extends StatefulWidget {
+  List<String> photos = [];
+
+  SiteImageContent(this.photos);
+
   @override
   SiteImageContentState createState() => SiteImageContentState();
 }
@@ -20,12 +24,12 @@ class SiteImageContentState extends State<SiteImageContent> {
   Color followColor = Colors.black;
   DateTime selectedDate = DateTime.now();
 
-  List<String> photos = [
-    'assets/images/consimgone.jpg',
-    'assets/images/consimgtwo.jpg',
-    'assets/images/consimgone.jpg',
-    'assets/images/consimgtwo.jpg',
-  ];
+//  List<String> photos = [
+//    'assets/images/consimgone.jpg',
+//    'assets/images/consimgtwo.jpg',
+//    'assets/images/consimgone.jpg',
+//    'assets/images/consimgtwo.jpg',
+//  ];
 
   List<T> map<T>(List list, Function handler) {
     List<T> result = [];
@@ -45,8 +49,6 @@ class SiteImageContentState extends State<SiteImageContent> {
       height: MediaQuery.of(context).size.height * 0.35,
       initialPage: 0,
       viewportFraction: 1.0,
-//      enlargeCenterPage: true,
-//      autoPlay: true,
       reverse: false,
       enableInfiniteScroll: true,
       autoPlayInterval: Duration(seconds: 2),
@@ -58,11 +60,10 @@ class SiteImageContentState extends State<SiteImageContent> {
           _current = index;
         });
       },
-      items: photos.map((imgUrl) {
+      items: widget.photos.map((imgUrl) {
         return Builder(
           builder: (BuildContext context) {
             return Stack(
-//              mainAxisSize: MainAxisSize.max,
               children: <Widget>[
                 Positioned(
                   top: 10,
@@ -71,13 +72,7 @@ class SiteImageContentState extends State<SiteImageContent> {
                   bottom: 0,
                   child: GestureDetector(
                     onTap: () {
-                      ImageDialogbox(imgUrl);
-//                      Navigator.push(
-//                          context,
-//                          MaterialPageRoute(
-//                            builder: (context) =>
-//                                MySecondScreen(photos: photos[_current]),
-//                          ));
+                      ImageDialogbox("http://halfwaiter.com/stock/assets/uploads/site_image/$imgUrl");
                     },
                     child: Container(
                       child: GestureDetector(
@@ -85,27 +80,15 @@ class SiteImageContentState extends State<SiteImageContent> {
                           tightMode: true,
                           customSize: Size(MediaQuery.of(context).size.width,
                               MediaQuery.of(context).size.height),
-//                            minScale: PhotoViewComputedScale.contained * 0.1,
-//                            maxScale: 1.0,
-                          imageProvider: AssetImage(imgUrl),
+                          imageProvider: NetworkImage("http://halfwaiter.com/stock/assets/uploads/site_image/$imgUrl"),
                           backgroundDecoration:
                               BoxDecoration(color: Colors.white),
                         ),
                       ),
-
-//                      child:
-//                          Image(fit: BoxFit.cover, image: AssetImage(imgUrl)),
                       width: MediaQuery.of(context).size.width,
                     ),
                   ),
                 ),
-
-//                Positioned(
-//
-//                    bottom: 0,
-//                    left: 0,
-//                    right: 0,
-//                    child: gethotelprofile()),
               ],
             );
           },

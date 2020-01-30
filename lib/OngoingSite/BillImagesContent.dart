@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
-import 'package:osm_app/Custom_dialog/customDialog.dart'as customDialog;
 
 class BillContent extends StatefulWidget {
   @override
@@ -71,12 +70,6 @@ class _BillContentState extends State<BillContent> {
                   child: GestureDetector(
                     onTap: () {
                       ImageDialogbox(imgUrl);
-//                      Navigator.push(
-//                          context,
-//                          MaterialPageRoute(
-//                            builder: (context) =>
-//                                MySecondScreen(photos: photos[_current]),
-//                          ));
                     },
                     child: Container(
                       child : GestureDetector(
@@ -89,22 +82,10 @@ class _BillContentState extends State<BillContent> {
                             backgroundDecoration: BoxDecoration(color: Colors.white),
                           ),
                       ),
-
-
-
-//                      child:
-//                          Image(fit: BoxFit.cover, image: AssetImage(imgUrl)),
                       width: MediaQuery.of(context).size.width,
                     ),
                   ),
                 ),
-
-//                Positioned(
-//
-//                    bottom: 0,
-//                    left: 0,
-//                    right: 0,
-//                    child: gethotelprofile()),
               ],
             );
           },
@@ -120,7 +101,7 @@ class _BillContentState extends State<BillContent> {
           onTap: (){
             Navigator.of(context).pop();
           },
-          child: customDialog.Dialog(
+          child: Dialog(
             backgroundColor: Colors.transparent,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -129,27 +110,6 @@ class _BillContentState extends State<BillContent> {
                       backgroundDecoration: BoxDecoration(color: Colors.transparent),
                     ),
               ),
-//          child: Container(
-//            height:270,
-//            width: 500,
-//
-//            child: Card(
-//              //semanticContainer: true,
-////              clipBehavior: Clip.antiAliasWithSaveLayer,
-//              child: Padding(
-//                padding: const EdgeInsets.all(8.0),
-//                child: PhotoView(
-//                  imageProvider: AssetImage(imgUrl),
-//                  backgroundDecoration: BoxDecoration(color: Colors.transparent),
-//                ),
-//              ),
-////              shape: RoundedRectangleBorder(
-////                borderRadius: BorderRadius.circular(10.0),
-////              ),
-//              elevation: 12,
-//              margin: EdgeInsets.only(left:0),
-//            ),
-//          ),
           ),
         );
       },

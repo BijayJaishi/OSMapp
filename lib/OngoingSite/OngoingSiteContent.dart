@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:osm_app/OngoingSite/IndividualSites.dart';
 import 'package:osm_app/OngoingSite/SiteTabView.dart';
 import 'package:http/http.dart' as http;
 import 'package:osm_app/model_classes/site_list.dart';
